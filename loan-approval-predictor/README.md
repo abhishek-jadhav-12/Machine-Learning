@@ -245,7 +245,6 @@ LinkedIn: https://www.linkedin.com/in/abhishek-s-jadhav
 
 ---
 
-## 📜 License
 
 This project is licensed under the MIT License.
 
