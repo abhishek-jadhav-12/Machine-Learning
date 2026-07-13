@@ -30,9 +30,15 @@ The system uses a Random Forest Classifier trained on a real-world loan approval
 
 ### Home Page
 
+![Home Page](assets/homepage.png)
+
 ### Loan Approval Prediction
 
+![Approved Prediction](assets/prediction_approved.png)
+
 ### EMI Calculator
+
+![EMI Calculated](assets\emi_calculated.png)
 
 ---
 
