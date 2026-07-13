@@ -38,7 +38,7 @@ The system uses a Random Forest Classifier trained on a real-world loan approval
 
 ### EMI Calculator
 
-![EMI Calculate](assets\emi_calculated.png)
+![EMI Calculated](assets\emi_calculated.png)
 
 ---
 
