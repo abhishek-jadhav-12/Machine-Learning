@@ -8,7 +8,7 @@ The system uses a Random Forest Classifier trained on a real-world loan approval
 
 ## 🚀 Live Demo
 
-🔗 **Live Application:** Coming Soon
+🔗 **Live Application:** https://ai-loan-approval-predictor.streamlit.app/
 
 ---
 

@@ -1,7 +1,10 @@
+import os
 import joblib
 
-MODEL_PATH = "models/loan_model.pkl"
-SCALER_PATH = "models/scaler.pkl"
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+MODEL_PATH = os.path.join(BASE_DIR, "models", "loan_model.pkl")
+SCALER_PATH = os.path.join(BASE_DIR, "models", "scaler.pkl")
 
 
 def load_model():
@@ -11,13 +14,11 @@ def load_model():
 
 
 def predict_loan(input_df):
-
     model, scaler = load_model()
 
     input_scaled = scaler.transform(input_df)
 
     prediction = model.predict(input_scaled)
-
     probability = model.predict_proba(input_scaled)
 
     return prediction[0], probability[0]
