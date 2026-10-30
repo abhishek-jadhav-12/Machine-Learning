@@ -261,12 +261,12 @@ div[data-testid="metric-container"] {
 
 /* Selectbox text */
 .stSelectbox div[data-baseweb="select"] {
-    color: #000000;
+    color: #FFFFFF !important;
 }
 
 /* Number input text */
 .stNumberInput input {
-    color: #000000;
+    color: #FFFFFF !important;
     font-weight: bold;
 }
 
