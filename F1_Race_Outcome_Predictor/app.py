@@ -2,17 +2,21 @@ import streamlit as st
 import pandas as pd
 import joblib
 import matplotlib.pyplot as plt
+from pathlib import Path
 
+# Base directory for resolving relative assets and models reliably in any working directory
+BASE_DIR = Path(__file__).resolve().parent
 
 st.set_page_config(
     page_title="F1 Race Outcome Predictor",
     page_icon="🏎️",
     layout="wide"
 )
-st.image(
-    "assets/f1_logo.png",
-    use_container_width=True
-)
+
+logo_path = BASE_DIR / "assets" / "f1_logo.png"
+
+if logo_path.exists():
+    st.image(str(logo_path), use_container_width=True)
 
 st.title("🏎️ F1 Race Outcome Predictor")
 st.markdown("""
@@ -32,17 +36,15 @@ Predict whether an F1 driver will finish on the podium based on:
 
 **Best Model:** Random Forest
 """)
-model = joblib.load(
-    "models/podium_predictor.pkl"
-)
 
-constructor_encoder = joblib.load(
-    "models/constructor_encoder.pkl"
-)
+@st.cache_resource
+def load_models():
+    model = joblib.load(BASE_DIR / "models" / "podium_predictor.pkl")
+    constructor_encoder = joblib.load(BASE_DIR / "models" / "constructor_encoder.pkl")
+    circuit_encoder = joblib.load(BASE_DIR / "models" / "circuit_encoder.pkl")
+    return model, constructor_encoder, circuit_encoder
 
-circuit_encoder = joblib.load(
-    "models/circuit_encoder.pkl"
-)
+model, constructor_encoder, circuit_encoder = load_models()
 col1, col2, col3 = st.columns(3)
 
 with col1:
